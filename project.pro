@@ -5,9 +5,10 @@ CONFIG -= app_bundle
 CONFIG -= qt core
 
 # for the reason that the "debug" configs will declared after
-# the project file ,my config 'DESTDIR' does's worked right
+# the project file ,my config "DESTDIR" does not works right
 # if you want to compile a release version ,open the line under this line
 #CONFIG -= debug
+
 contains(CONFIG,debug) {
         DESTDIR = bin/debug/
 } else {
@@ -74,7 +75,7 @@ unix:!macx {
 		
 	LBITS = $$system(getconf LONG_BIT)
 
-        count(LBITS,64.) {
+        contains(LBITS,64) {
 		COCOS_INCLUDE_DEPEND_PATH += $$COCOS2D_ROOT/platform/third_party/linux/include64
 		STATICLIBS_DIR += $$COCOS2D_ROOT/cocos2dx/platform/third_party/linux/libraries/lib64
 		contains(COCOS2D-X_MODULES,CocosDenshion) {
