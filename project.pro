@@ -29,13 +29,13 @@ HEADERS += main.h \
 # set a variable for config cocos2dx modules
 # --------------------------------------------
 # the simple audio engine
-COCOS2D-X_MODULES += CocosDenshion
+%COCOS_DENSHION%COCOS2D-X_MODULES += CocosDenshion
 # some extensions eg: CCTableView
-COCOS2D-X_MODULES += extensions
+%COCOS_EXTENSIONS%COCOS2D-X_MODULES += extensions
 # the box2d physics engine
-COCOS2D-X_MODULES += box2d
+%COCOS_BOX2D%COCOS2D-X_MODULES += box2d
 # the chipmunk physics engine
-COCOS2D-X_MODULES += chipmunk
+%COCOS_CHIPMUNK%COCOS2D-X_MODULES += chipmunk
 # --------------------------------------------
 
 COCOS2D_ROOT = $$system(echo $COCOS2D_ROOT)
