@@ -29,13 +29,13 @@ HEADERS += main.h \
 # set a variable for config cocos2dx modules
 # --------------------------------------------
 # the simple audio engine
-# COCOS2D-X_MODULES += CocosDenshion
+COCOS2D-X_MODULES += CocosDenshion
 # some extensions eg: CCTableView
-# COCOS2D-X_MODULES += extensions
+COCOS2D-X_MODULES += extensions
 # the box2d physics engine
-# COCOS2D-X_MODULES += box2d
+COCOS2D-X_MODULES += box2d
 # the chipmunk physics engine
-# COCOS2D-X_MODULES += chipmunk
+COCOS2D-X_MODULES += chipmunk
 # --------------------------------------------
 
 COCOS2D_ROOT = $$system(echo $COCOS2D_ROOT)
@@ -105,10 +105,10 @@ unix:!macx {
 		SHAREDLIBS += -L$$COCOS2D_ROOT/lib/linux/Debug -Wl,-rpath,$$COCOS2D_ROOT/lib/linux/Debug
 	
 		contains(COCOS2D-X_MODULES,box2d) {
-			$$COCOS2D_ROOT/lib/linux/Debug/libbox2d.a
+			STATICLIBS += $$COCOS2D_ROOT/lib/linux/Debug/libbox2d.a
 		}
 		contains(COCOS2D-X_MODULES,chipmunk) {
-			$$COCOS2D_ROOT/lib/linux/Debug/libchipmunk.a
+			STATICLIBS += $$COCOS2D_ROOT/lib/linux/Debug/libchipmunk.a
 		}
 	} else {
 		DEFINES += NDEBUG
@@ -116,10 +116,10 @@ unix:!macx {
 		SHAREDLIBS += -L$$COCOS2D_ROOT/lib/linux/Release -Wl,-rpath,$$COCOS2D_ROOT/lib/linux/Release
 
 		contains(COCOS2D-X_MODULES,box2d) {
-			$$COCOS2D_ROOT/lib/linux/Release/libbox2d.a
+			STATICLIBS += $$COCOS2D_ROOT/lib/linux/Release/libbox2d.a
 		}
 		contains(COCOS2D-X_MODULES,chipmunk) {
-			$$COCOS2D_ROOT/lib/linux/Release/libchipmunk.a
+			STATICLIBS += $$COCOS2D_ROOT/lib/linux/Release/libchipmunk.a
 		}
 	}
 
