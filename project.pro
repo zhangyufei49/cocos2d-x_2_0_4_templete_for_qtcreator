@@ -56,7 +56,7 @@ contains(COCOS2D-X_MODULES,extensions) {
 }
 
 contains(COCOS2D-X_MODULES,box2d) {
-	COCOS_INCLUDE_DEPEND_PATH += $$COCOS2D_ROOT/external/Box2D
+	COCOS_INCLUDE_DEPEND_PATH += $$COCOS2D_ROOT/external
 }
 
 contains(COCOS2D-X_MODULES,chipmunk) {
