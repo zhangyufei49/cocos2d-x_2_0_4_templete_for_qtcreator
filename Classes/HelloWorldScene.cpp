@@ -3,6 +3,12 @@ USING_NS_CC;
 
 
 #define TITLE_FONT_SIZE 20
+#if(CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
+#define FONT_NAME "Monospace"
+#else
+#define FONT_NAME "Arial"
+#endif
+
 
 CCScene* HelloWorld::scene()
 {
@@ -32,7 +38,7 @@ bool HelloWorld::init()
 	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
 	CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 
-	CCLabelTTF* pLabel = CCLabelTTF::create("Hello Gril", "Arial", TITLE_FONT_SIZE);
+	CCLabelTTF* pLabel = CCLabelTTF::create("Hello Girl", FONT_NAME, TITLE_FONT_SIZE);
 
 	// position the label on the center of the screen
 	pLabel->setPosition(ccp(origin.x + visibleSize.width/2,

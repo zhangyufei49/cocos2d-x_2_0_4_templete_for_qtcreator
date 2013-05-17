@@ -4,16 +4,14 @@ CONFIG -= console
 CONFIG -= app_bundle
 CONFIG -= qt core
 
-# for the reason that the "debug" configs will declared after
-# the project file ,my config "DESTDIR" does not works right
-# if you want to compile a release version ,open the line under this line
-#CONFIG -= debug
-
-contains(CONFIG,debug) {
-        DESTDIR = bin/debug/
-} else {
-        DESTDIR = bin/release/
+CONFIG(debug, debug|release) {
+DESTDIR = bin/debug/
 }
+
+CONFIG(release, debug|release) {
+DESTDIR = bin/release/
+}
+
 
 RESOURCES = Resources.qrc
 

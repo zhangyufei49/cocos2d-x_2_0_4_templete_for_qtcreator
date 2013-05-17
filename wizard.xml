@@ -39,7 +39,7 @@ leave room for the Qt 4 target page.
 	id="R.Plain C++" category="I.Projects"
 	featuresRequired="QtSupport.Wizards.FeatureQt">
 	<icon>cocos2d-x.png</icon>
-	<description>Create a cocos2d-x 2.0.4 project with the default 'hello gril' template.</description>
+	<description>Create a cocos2d-x 2.0.4 project with the default 'hello girl' template.</description>
 	<displayname>cocos2d-x 2.0.4 project</displayname>;
 	<displaycategory>Non-Qt Project</displaycategory>
 	<files>
@@ -51,7 +51,6 @@ leave room for the Qt 4 target page.
 		<file source="Classes/HelloWorldScene.cpp" openeditor="true"/>
 		<file source="project.pro" target="%ProjectName%.pro" openproject="true"/>
 		<file source="Resources.qrc" openeditor="false"/>
-		<file source="Resources/.bird" openeditor="false"/>
 	</files>
 	<fields>
 		<field name="COCOS_DENSHION">
