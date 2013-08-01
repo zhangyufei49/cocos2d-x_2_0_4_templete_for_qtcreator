@@ -50,7 +50,6 @@ leave room for the Qt 4 target page.
 		<file source="Classes/HelloWorldScene.h" openeditor="false"/>
 		<file source="Classes/HelloWorldScene.cpp" openeditor="true"/>
 		<file source="project.pro" target="%ProjectName%.pro" openproject="true"/>
-		<file source="Resources.qrc" openeditor="false"/>
 	</files>
 	<fields>
 		<field name="COCOS_DENSHION">
