@@ -1,9 +1,3 @@
-TARGET = HelloBird
-TEMPLATE = app
-CONFIG -= console
-CONFIG -= app_bundle
-CONFIG -= qt core
-
 CONFIG(debug, debug|release) {
 DESTDIR = bin/debug/
 }
@@ -67,9 +61,6 @@ unix:!macx {
 
 	COCOS_INCLUDE_DEPEND_PATH += $$COCOS2D_ROOT/cocos2dx/platform/linux \
 		$$COCOS2D_ROOT/cocos2dx//platform/third_party/linux/glew-1.7.0/glew-1.7.0/include/ \
-		$$COCOS2D_ROOT/cocos2dx/platform/third_party/linux/libfreetype2 \
-		$$COCOS2D_ROOT/cocos2dx/platform/third_party/linux/libxml2 \
-		$$COCOS2D_ROOT/cocos2dx/platform/third_party/linux/libjpeg
 		
 	LBITS = $$system(getconf LONG_BIT)
 
@@ -89,13 +80,6 @@ unix:!macx {
 			SHAREDLIBS += -L$$SHAREDLIBS_DIR -lfmodex
 		}
 	}
-
-	STATICLIBS += $$STATICLIBS_DIR/libfreetype.a \
-		$$STATICLIBS_DIR/libxml2.a \
-		$$STATICLIBS_DIR/libpng.a \
-		$$STATICLIBS_DIR/libjpeg.a \
-		$$STATICLIBS_DIR/libtiff.a
-		#$$STATICLIBS_DIR/libcurl.a \
 
 	contains(CONFIG,debug) {
 		DEFINES += DEBUG
@@ -122,6 +106,8 @@ unix:!macx {
 	}
 
 	SHAREDLIBS += -lcocos2d -lrt -lz
+	SHAREDLIBS += -lfreetype -lxml2 -lpng -ljpep -ltiff -lcurl
+
 	contains(COCOS2D-X_MODULES,CocosDenshion) {
 		SHAREDLIBS += -lcocosdenshion
 	}
@@ -133,9 +119,6 @@ unix:!macx {
 
 	SHAREDLIBS += -Wl,-rpath,$$STATICLIBS_DIR
 
-	# if need curl , open this
-	#SHAREDLIBS += -lcurl
-	
 	LIBS +=	$${STATICLIBS}
 	LIBS += $${SHAREDLIBS}
 } 
