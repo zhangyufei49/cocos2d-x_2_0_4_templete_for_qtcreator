@@ -85,18 +85,18 @@ unix:!macx {
 		}
 	}
 
-	contains(CONFIG,debug) {
-		DEFINES += DEBUG
+#	contains(CONFIG,debug) {
+#	DEFINES += DEBUG
 
-		SHAREDLIBS += -L$$COCOS2D_ROOT/lib/linux/Debug -Wl,-rpath,$$COCOS2D_ROOT/lib/linux/Debug
-	
-		contains(COCOS2D-X_MODULES,box2d) {
-			STATICLIBS += $$COCOS2D_ROOT/lib/linux/Debug/libbox2d.a
-		}
-		contains(COCOS2D-X_MODULES,chipmunk) {
-			STATICLIBS += $$COCOS2D_ROOT/lib/linux/Debug/libchipmunk.a
-		}
-	} else {
+#	SHAREDLIBS += -L$$COCOS2D_ROOT/lib/linux/Debug -Wl,-rpath,$$COCOS2D_ROOT/lib/linux/Debug
+#
+#	contains(COCOS2D-X_MODULES,box2d) {
+#		STATICLIBS += $$COCOS2D_ROOT/lib/linux/Debug/libbox2d.a
+#	}
+#	contains(COCOS2D-X_MODULES,chipmunk) {
+#		STATICLIBS += $$COCOS2D_ROOT/lib/linux/Debug/libchipmunk.a
+#	}
+#} else {
 		DEFINES += NDEBUG
 
 		SHAREDLIBS += -L$$COCOS2D_ROOT/lib/linux/Release -Wl,-rpath,$$COCOS2D_ROOT/lib/linux/Release
@@ -107,7 +107,7 @@ unix:!macx {
 		contains(COCOS2D-X_MODULES,chipmunk) {
 			STATICLIBS += $$COCOS2D_ROOT/lib/linux/Release/libchipmunk.a
 		}
-	}
+#	}
 
 	SHAREDLIBS += -lcocos2d -lrt -lz
 	SHAREDLIBS += -lfreetype -lxml2 -lpng -ljpep -ltiff -lcurl -lGL -lGLEW
