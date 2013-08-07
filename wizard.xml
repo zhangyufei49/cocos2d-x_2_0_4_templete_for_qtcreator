@@ -49,6 +49,9 @@ leave room for the Qt 4 target page.
 		<file source="Classes/AppDelegate.cpp" openeditor="true"/>
 		<file source="Classes/HelloWorldScene.h" openeditor="false"/>
 		<file source="Classes/HelloWorldScene.cpp" openeditor="true"/>
+		<file source="Classes/bird_config.h" openeditor="false"/>
+		<file source="Classes/bird_types.h" openeditor="false"/>
+		<file source="Classes/bird_tools.h" openeditor="false"/>
 		<file source="project.pro" target="%ProjectName%.pro" openproject="true"/>
 	</files>
 	<fields>
