@@ -1,3 +1,8 @@
+TEMPLATE = app
+CONFIG += console
+CONFIG -= app_bundle
+CONFIG -= qt
+
 CONFIG(debug, debug|release) {
 DESTDIR = bin/debug/
 }
@@ -59,7 +64,7 @@ contains(COCOS2D-X_MODULES,chipmunk) {
 unix:!macx {
 	DEFINES += LINUX
 
-	COCOS_INCLUDE_DEPEND_PATH += $$COCOS2D_ROOT/cocos2dx/platform/linux \
+	COCOS_INCLUDE_DEPEND_PATH += $$COCOS2D_ROOT/cocos2dx/platform/linux
 		
 	LBITS = $$system(getconf LONG_BIT)
 
