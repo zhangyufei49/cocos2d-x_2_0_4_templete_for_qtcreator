@@ -60,7 +60,6 @@ unix:!macx {
 	DEFINES += LINUX
 
 	COCOS_INCLUDE_DEPEND_PATH += $$COCOS2D_ROOT/cocos2dx/platform/linux \
-		$$COCOS2D_ROOT/cocos2dx//platform/third_party/linux/glew-1.7.0/glew-1.7.0/include/ \
 		
 	LBITS = $$system(getconf LONG_BIT)
 
@@ -106,17 +105,13 @@ unix:!macx {
 	}
 
 	SHAREDLIBS += -lcocos2d -lrt -lz
-	SHAREDLIBS += -lfreetype -lxml2 -lpng -ljpep -ltiff -lcurl
+	SHAREDLIBS += -lfreetype -lxml2 -lpng -ljpep -ltiff -lcurl -lGL -lGLEW
 
 	contains(COCOS2D-X_MODULES,CocosDenshion) {
 		SHAREDLIBS += -lcocosdenshion
 	}
 
-	SHAREDLIBS += -lglfw -lGL
 	SHAREDLIBS += -Wl,-rpath,$${SHAREDLIBS_DIR}
-	SHAREDLIBS += -L$$COCOS2D_ROOT/cocos2dx/platform/third_party/linux/glew-1.7.0/glew-1.7.0/lib -lGLEW
-	SHAREDLIBS += -Wl,-rpath,$$COCOS2D_ROOT/cocos2dx/platform/third_party/linux/glew-1.7.0/glew-1.7.0/lib
-
 	SHAREDLIBS += -Wl,-rpath,$$STATICLIBS_DIR
 
 	LIBS +=	$${STATICLIBS}
