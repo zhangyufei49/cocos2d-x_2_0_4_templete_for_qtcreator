@@ -39,12 +39,13 @@ leave room for the Qt 4 target page.
 	id="R.Plain C++" category="I.Projects"
 	featuresRequired="QtSupport.Wizards.FeatureQt">
 	<icon>cocos2d-x.png</icon>
-	<description>Create a cocos2d-x 2.0.4 project with the default 'hello girl' template.</description>
-	<displayname>cocos2d-x 2.0.4 project</displayname>;
+	<description>Create a cocos2d-x 2.x project with main scene and 'hello girl' label on it.</description>
+	<description xml:lang="ru">Создаёт проект на основе cocos2d-x 2.x с главной сценой и надписью 'hello girl'.</description>
+	<displayname>cocos2d-x 2.x linux project</displayname>
 	<displaycategory>Non-Qt Project</displaycategory>
 	<files>
-		<file source="main.cpp" openeditor="true"/>
-		<file source="main.h" openeditor="false"/>
+		<file source="proj.linux/main.cpp" openeditor="true"/>
+		<file source="proj.linux/main.h" openeditor="false"/>
 		<file source="Classes/AppDelegate.h" openeditor="false"/>
 		<file source="Classes/AppDelegate.cpp" openeditor="true"/>
 		<file source="Classes/HelloWorldScene.h" openeditor="false"/>
@@ -56,20 +57,20 @@ leave room for the Qt 4 target page.
 	</files>
 	<fields>
 		<field name="COCOS_DENSHION">
-			<fieldcontrol class="QCheckBox" truevalue="" falsevalue="# "/>
+			<fieldcontrol class="QCheckBox" defaultvalue="true" truevalue="" falsevalue="# "/>
 			<fielddescription>CocosDenshion audio engine module</fielddescription>
 		</field>
 		<field name="COCOS_EXTENSIONS">
-			<fieldcontrol class="QCheckBox" truevalue="" falsevalue="# "/>
-			<fielddescription>Some extensions modules eg:GUI,network,CCBReader</fielddescription>
+			<fieldcontrol class="QCheckBox" defaultvalue="true" truevalue="" falsevalue="# "/>
+			<fielddescription>Extensions modules: GUI, network, CCBReader and others</fielddescription>
 		</field>
 		<field name="COCOS_BOX2D">
 			<fieldcontrol class="QCheckBox" truevalue="" falsevalue="# "/>
-			<fielddescription>box2d physics engine module</fielddescription>
+			<fielddescription>Box2d physics engine module, conflicts with Chipmunk!</fielddescription>
 		</field>
 		<field name="COCOS_CHIPMUNK">
-			<fieldcontrol class="QCheckBox" truevalue="" falsevalue="# "/>
-			<fielddescription>chipmunk physics engine module</fielddescription>
+			<fieldcontrol class="QCheckBox" defaultvalue="true" truevalue="" falsevalue="# "/>
+			<fielddescription>Chipmunk physics engine module, conflicts with Box2d!</fielddescription>
 		</field>
 	</fields>
 </wizard>
